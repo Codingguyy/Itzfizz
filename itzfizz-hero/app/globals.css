@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-bg font-sans text-ink antialiased; }
+
+/* Hide hero until GSAP has set its start state (prevents a flash on hydrate).
+   The <noscript> fallback in layout.js reveals it when JS is off. */
+[data-hero] { visibility: hidden; }
+
+/* Lenis smooth-scroll recommended styles */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+:focus-visible { outline: 2px solid theme("colors.accent"); outline-offset: 3px; }
